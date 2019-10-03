@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 <?php
 class student{
     function student(){
@@ -8,3 +12,6 @@ class student{
 $ex = new student();
 echo $ex->name;
 ?> 
+
+</body>
+</html>
