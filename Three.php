@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 Name: <input type="text" name="name"><br>
 House Name: <input type="text" name="hName"><br>
 <input type="submit">
