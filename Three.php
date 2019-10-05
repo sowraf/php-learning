@@ -14,14 +14,14 @@ House Name: <input type="text" name="hName"><br>
        $hName=$_POST["hName"];
        if(empty($name))
           {
-            echo "No Input"."<br>";
+            echo "No Input for Name field"."<br>";
        }
        else
        { echo "Name: ".$name."<br>"; }
        
        if(empty($hName))
           {
-            echo "No Input"."<br>";
+            echo "No Input for House Name field"."<br>";
        }
        else
        { echo "House Name: ".$hName."<br>"; }
