@@ -8,23 +8,26 @@ House Name: <input type="text" name="hName"><br>
 </form>
   
   <?php
-  if($_SERVER["REQUEST_METHOD"]=="POST"]
+  if($_SERVER["REQUEST_METHOD"]=="POST")
      {
        $name=$_POST["name"];
        $hName=$_POST["hName"];
        if(empty($name))
           {
-            echo "No Input";
+            echo "No Input"."<br>";
        }
        else
-       { echo "Name: ".$name; }
+       { echo "Name: ".$name."<br>"; }
        
        if(empty($hName))
           {
-            echo "No Input";
+            echo "No Input"."<br>";
        }
        else
-       { echo "House Name: ".$hName; }
+       { echo "House Name: ".$hName."<br>"; }
+      }
+
+      ?>
   
 </body>
 </html>
