@@ -6,7 +6,6 @@ if (!isset($_SESSION['username'])) {
     header('location: login.php');
     exit;
 } else {
-
     echo "Hi " . $_SESSION['username'] . ", Welcome to the site";
 }
 
