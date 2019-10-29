@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_SESSION['loggedin'])){
+if(isset($_SESSION['username'])){
 
 header('location: welcome.php');
 
@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty(trim($_POST['username']))){
 
         $username_err = "Please enter the username";
-
+    
     } else {
 
         $username = trim($_POST['username']);
