@@ -10,7 +10,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty(trim($_POST['username']))){
 
         $username_err = "Username cannot be empty";
-
     } else {
 
         $sql = 'SELECT username from users WHERE username = ?';
@@ -28,43 +27,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if($stmt->num_rows == 1){
 
                 $username_err = "Username already exists";
-
             } else {
 
                 $username = trim($_POST['username']);
-
             }
         } else {
 
             echo "Something went wrong, please try again later";
-
         }
         
         $stmt->close();
-
     }
 
     if(empty(trim($_POST['password']))){
 
         $password_err = "Password field cannot be empty";
 
-    } elseif(strlen(trim($_POST['password'])) < 8) {
-
         $password_err = "Password must be atleast 8 characters long";
-
     } else {
 
         $password = trim($_POST['password']);
-
     }
 
     if(empty(trim($_POST['confirm_password']))){
 
         $confirm_password_err = "Confirm password field cannot be empty";
-
-    } elseif(strlen(trim($_POST['confirm_password'])) < 8) {
-
-        $confirm_password_err = "Password must be atleast 8 characters long";
     } else {
 
         $confirm_password = trim($_POST['confirm_password']);
@@ -72,10 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $confirm_password_err = "Password mismatch";      
         }
-
     }
-
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
         $sql = 'INSERT INTO users (username,password) VALUES (?,?)';
 
@@ -88,7 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($stmt->execute()){
 
             header("location: login.php");
-
         } else {
 
             Echo "Something went wrong, Please try again later";
@@ -96,7 +79,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         $stmt->close();
-
     }
 
     $conn->close();
@@ -126,5 +108,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <input type="reset" value="Reset"> 
 <p> Already a member? <a href='login.php'> Login </a> </p>
 
-</body>
 </html>
